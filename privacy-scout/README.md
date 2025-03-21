@@ -13,7 +13,7 @@ Privacy Scout is a Chrome extension designed to provide quick privacy checks for
 7️⃣ **Auto-Blocking of Non-Essential Cookies** – Prevent tracking cookies before user consent.  
 
 ## Installation
-
+    
 1. Download the extension from the Chrome Web Store (link to be added).  
 2. Add the extension to your Chrome browser.  
 3. Pin the Privacy Scout icon to your toolbar for quick access.  
