@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPR Compliance</title>
+    <link rel="stylesheet" href="popup.css">
+    <link rel="icon" href="icons/favicon.ico" type="image/x-icon"> <!-- Add favicon -->
+</head>
+<body>
+    <div class="container">
+        <!-- Move help button to the top-right -->
+        <div class="help-button" id="helpButton" title="Need Help?" style="position: absolute; top: 15px; right: 15px;">?</div>
+
+
+
+        <!-- Header Section -->    
+        <div class="popup-header" id="popup-header" style="cursor: pointer;">
+            <img src="../icons/logo.png" alt="Privacy Logo" class="logo">
+            <h1 class="popup-title">Privacy Scout</h1>
+            <!-- <p class="popup-subtitle">Your GDPR Compliance Assistant</p> -->
+        </div>
+
+
+        <!-- Home Section -->
+        <div id="home-section">
+            <div class="plugin-message">
+                <h2 class="plugin-title">Take Control of Your Privacy!</h2>
+                <p class="plugin-description">
+                    Scan any website in seconds and get actionable insights to protect your online privacy.
+                </p>
+                <div class="button-container">
+                    <button id="scan-btn" class="button-success">🔍 Scan Website</button>
+                    <div id="loading-spinner" class="spinner" style="display: none;">
+                        <img src="../icons/scan.gif" alt="Loading..." />
+                    </div>
+                </div>
+                <!-- Footer Section -->
+                <div class="footer">
+                    <p class="footer-text">
+                        Privacy Scout empowers you to uncover hidden trackers, ensure GDPR compliance, and safeguard your personal data.
+                    </p>
+                    <p class="footer-highlight">
+                        <strong>Stay informed, stay secure!</strong>
+                    </p>
+                </div>  
+            </div>
+           
+        </div>
+
+          
+
+
+
+        <!-- Summary Section -->
+        <div id="summary-section" style="display: none;">
+            <h2>Website Summary</h2>
+            <p>
+                Privacy Scout has analyzed the website for GDPR compliance and privacy risks. Here's a summary of the findings:
+            </p>
+            <!-- Compliance Score -->
+            <div class="score-container">
+                <p>Compliance Score: <span id="complianceScore">0%</span></p>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+            </div>
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-button active" data-tab="summary">Summary</button>
+                <button class="tab-button" data-tab="details">Details</button>
+            </div>
+
+            <!-- Summary Tab Content -->
+            <div id="summary" class="tab-content active">
+                <p><strong>🍪 Cookies Used:</strong> <span id="cookiecheck">Checking...</span></p>
+                <p><strong>🕵️ Trackers Found:</strong> <span id="trackerscheck">Checking...</span></p>
+                <p><strong>🔒 Security Headers:</strong> <span id="securitycheck">Checking...</span></p>
+                <p><strong>✅ Consent Check:</strong> <span id="consentcheck">Checking...</span></p>
+                <p><strong>📜 Privacy Policy:</strong> <span id="policycheck">Checking...</span></p>
+                <p><strong>🛡️ Secure Connection ( HTTPS):</strong> <span id="connectioncheck">Checking...</span></p>
+            </div>
+
+            <div id="details" class="tab-content">
+                <h2>🔍 Privacy laws & motive</h2>
+
+                <div class="detail-section">
+                    <h3>✅ Cookie Consent Check </h3>
+                    <!-- <span>Ref: GDPR Article 7 & Article 4(11).</span> -->
+                
+                    <div class="detail-content">
+                        <p><strong>Purpose:</strong> Detects if the website asks for user consent before storing cookies.</p>
+                        <p><strong>Importance:</strong> GDPR mandates explicit, informed, and freely given consent.</p>
+                        <p><strong>Criteria:</strong> A valid cookie banner must allow users to <em>Accept</em> or <em>Reject</em> cookies.</p>
+                        <p><strong>Reference:</strong> GDPR Article 7 & Article 4(11).</p>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>🕵️ Third-Party Tracker Detection</h3>
+                    <div class="detail-content">
+                        <p><strong>Purpose:</strong> Identifies tracking scripts collecting user data.</p>
+                        <p><strong>Importance:</strong> Websites must not share personal data with third parties without consent.</p>
+                        <p><strong>Criteria:</strong> No unauthorized trackers should be running on the site.</p>
+                        <p><strong>Reference:</strong> GDPR Article 6 & 22.</p>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>📜 Privacy Policy & Terms Check</h3>
+                    <div class="detail-content">
+                        <p><strong>Purpose:</strong> Ensures the website provides links to its Privacy Policy and Terms of Service.</p>
+                        <p><strong>Importance:</strong> Transparency about data collection, usage, and storage is required by GDPR.</p>
+                        <p><strong>Criteria:</strong> A visible link to Privacy Policy or Terms must be present.</p>
+                        <p><strong>Reference:</strong> GDPR Articles 12, 13, and 14.</p>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>🔒 Secure Connection Check</h3>
+                    <div class="detail-content">
+                        <p><strong>Purpose:</strong> Verifies if the website uses HTTPS for secure data transmission.</p>
+                        <p><strong>Importance:</strong> Encryption and security measures protect personal data from unauthorized access.</p>
+                        <p><strong>Criteria:</strong> The website must use HTTPS with a valid SSL certificate.</p>
+                        <p><strong>Reference:</strong> GDPR Article 32.</p>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>📢 Data Collection Alert</h3>
+                    <div class="detail-content">
+                        <p><strong>Purpose:</strong> Notifies users when a website collects personal data without proper consent.</p>
+                        <p><strong>Importance:</strong> Data collection must be lawful, transparent, and limited to what’s necessary.</p>
+                        <p><strong>Criteria:</strong> The website must provide clear opt-in/opt-out choices.</p>
+                        <p><strong>Reference:</strong> GDPR Articles 5, 6, and 7.</p>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>🛡️ Website Security Headers Check</h3>
+                    <div class="detail-content">
+                        <p><strong>Purpose:</strong> Analyzes security headers like CSP, HSTS, and Referrer Policy to prevent cyberattacks.</p>
+                        <p><strong>Importance:</strong> Ensures secure data transmission and privacy by design.</p>
+                        <p><strong>Criteria:</strong> Secure headers must be properly implemented.</p>
+                        <p><strong>Reference:</strong> GDPR Articles 25 & 32.</p>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>🚫 Auto-Blocking of Non-Essential Cookies</h3>
+                    <div class="detail-content">
+                        <p><strong>Purpose:</strong> Prevents tracking cookies from loading before user consent is given.</p>
+                        <p><strong>Importance:</strong> Websites must not store cookies until the user agrees to them.</p>
+                        <p><strong>Criteria:</strong> No tracking cookies should load before user consent.</p>
+                        <p><strong>Reference:</strong> GDPR Article 5 & the ePrivacy Directive.</p>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>⚠️ Basic Data Breach Warnings</h3>
+                    <div class="detail-content">
+                        <p><strong>Purpose:</strong> Alerts users if the website was involved in past data breaches.</p>
+                        <p><strong>Importance:</strong> GDPR requires websites to report breaches and notify users if their data was compromised.</p>
+                        <p><strong>Criteria:</strong> The website must not be linked to known breaches.</p>
+                        <p><strong>Reference:</strong> GDPR Articles 33 & 34.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="help-section" style="display: none;">
+            <h2>Need Assistance? We're Here to Help!</h2>
+            <p>If you have questions or need support, please refer to the following resources:</p>
+            <ul>
+                <li><strong>FAQs:</strong> Learn more about how Privacy Scout works and GDPR compliance.</li>
+                <li><strong>User Guide:</strong> Step-by-step instructions to use the plugin effectively.</li>
+                <li><strong>Contact Us:</strong> Reach out to us via email <a href="mailto:ashish.techbytes@gmail.com">Support at PrivacyScout</a>.</li>
+            </ul>
+            <p><strong>Support Hours:</strong> Monday to Friday, 9:00 AM - 6:00 PM (EST).</p>
+            <p>We value your feedback! Let us know how we can improve Privacy Scout.</p>
+        </div>
+
+
+
+        <!-- <button id="scanButton">Scan Website</button> -->
+        <!-- 
+        <div class="button-container">
+            <button id="scan-btn" class="button-success">🔍 Scan Website</button>
+            <div id="loading-spinner" class="spinner" style="display: none;">
+                <img src="../icons/scan.gif" alt="Loading..." />
+            </div> --> 
+            <!-- Loading spinner -->
+            <!-- <button class="button-secondary" id="settings-btn">⚙️ Settings</button>
+            <button class="button-danger" id="clear-btn">🗑️ Clear Data</button>
+            <button class="button-success" id="export-btn">📤 Export Report</button>
+        </div> -->
+        
+
+        
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

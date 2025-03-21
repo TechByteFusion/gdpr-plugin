@@ -1,0 +1,407 @@
+body {
+    font-family: Arial, sans-serif;
+    width: 300px;
+    padding: 10px;
+    background-color: #f4f4f9; /* Light background for better contrast */
+    color: #333; /* Darker text for readability */
+}
+
+h2 {
+    text-align: center;
+    color: #1e1e1f; /* Primary color for headings */
+}
+
+.score-container {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px; /* Slightly larger font for better visibility */
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 10px;
+    background-color: #28a745; /* Green for success */
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.5s ease; /* Smooth progress bar animation */
+}
+
+/* Tabs Container */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e9ecef; /* Subtle border for separation */
+}
+
+/* Tab Buttons */
+.tab-button {
+    flex: 1;
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6c757d; /* Neutral gray for inactive tabs */
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent; /* Default border for inactive tabs */
+}
+
+.tab-button.active {
+    color: #007bff; /* Professional blue for active tab */
+    border-bottom: 2px solid #007bff; /* Highlight active tab */
+    font-weight: 600; /* Slightly bolder for emphasis */
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    padding: 10px;
+    background-color: #f8f9fa; /* Light background for content */
+    /* border: 1px solid #e9ecef; Subtle border for structure */
+    /* border-radius: 8px; Rounded corners for a modern look */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Subtle shadow for depth */
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Style for Details Tab */
+#details-tab {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+/* Detail Section Styling */
+.detail-section {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #ffffff; /* White background for contrast */
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for Section Headers */
+.detail-section h3 {
+    /* background-color: #484949; */
+    color: rgb(67, 65, 65);
+    padding: 10px;
+    margin: 0;  
+    cursor: pointer;
+    font-size: 14px; /* Larger font for section headers */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Expandable Content */
+.detail-content {
+    display: none;
+    padding: 10px;
+    background: #f9f9f9;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Align span content to the right */
+#summary p {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between label and span content */
+    align-items: center; /* Vertically align items */
+    margin: 10px 0; /* Add spacing between paragraphs */
+    font-size: 14px; /* Standard font size for readability */
+    color: #343a40; /* Dark gray for text */
+}
+
+#summary span {
+    text-align: right; /* Align span content to the right */
+    font-weight: 300; /* Optional: Semi-bold for better visibility */
+}
+
+/* Hover effect */
+/* .detail-section h3:hover {
+    background-color: #6c6f71;
+} */
+
+
+
+/*  Accordian format*/
+
+
+
+
+/**/
+
+/* General Button Styling */
+button {
+    background-color: #007bff; /* Primary blue color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Roboto', sans-serif; /* Professional font */
+    letter-spacing: 0.5px; /* Slightly spaced letters */
+}
+
+/* Hover Effect */
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Click Effect */
+button:active {
+    background-color: #004099;
+    transform: scale(0.98);
+}
+
+/* Disabled Button */
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* Secondary Buttons (Gray) */
+.button-secondary {
+    background-color: #6c757d;
+}
+
+.button-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Danger Buttons (Red) */
+.button-danger {
+    background-color: #dc3545;
+}
+
+.button-danger:hover {
+    background-color: #c82333;
+}
+
+/* Success Buttons (Green) */
+.button-success {
+    background-color: #28a745;
+}
+
+.button-success:hover {
+    background-color: #218838;
+}
+
+/* Floating Action Button */
+.floating-btn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    animation: bounce 2s infinite; /* Subtle bounce animation */
+}
+
+.floating-btn:hover {
+    background-color: #0056b3;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Header Styling */
+.popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain; /* Ensures the logo scales properly */
+}
+
+.help-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: #0078d7;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.help-button:hover {
+    background-color: #005a9e;
+    transform: scale(1.1);
+}
+
+#loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+
+
+/* Styling for the popup header */
+.popup-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    background-color: #ffffff; /* Professional blue background */
+    color: #e54221; /* White text for contrast */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.popup-header .logo {
+    width: 50px; /* Adjust logo size */
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.popup-title {
+    font-size: 1.5rem; /* Larger font size for the title */
+    font-weight: 700; /* Bold title for emphasis */
+    margin: 0;
+}
+
+.popup-subtitle {
+    font-size: 1rem; /* Smaller font size for the subtitle */
+    font-weight: 400; /* Regular weight for subtitle */
+    margin: 5px 0 0;
+    color: #d1ecf1; /* Light blue for subtitle text */
+}
+
+
+
+
+
+
+/* Styling for the plugin-message section */
+.plugin-message {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background for contrast */
+    border: 1px solid #e9ecef; /* Subtle border for structure */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.plugin-title {
+    font-size: 1.4rem; /* Larger font size for the title */
+    font-weight: 700; /* Bold title for emphasis */
+    color: #052f5d; /* Professional blue color */
+    margin-bottom: 10px;
+}
+
+.plugin-description {
+    font-size: 1rem; /* Standard font size for readability */
+    color: #343a40; /* Dark gray for text */
+    line-height: 1.6; /* Increased line height for better readability */
+    margin-bottom: 10px;
+}
+
+.plugin-highlight {
+    font-size: 1.1rem; /* Slightly larger font for emphasis */
+    color: #28a745; /* Green color for positivity */
+    font-weight: 600; /* Semi-bold for emphasis */
+}
+
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa; /* Light gray background for contrast */
+    border-top: 1px solid #e9ecef; /* Subtle border to separate footer */
+    font-size: 0.9rem; /* Slightly smaller font size for footer */
+    color: #6c757d; /* Neutral gray text color */
+}
+
+.footer-text {
+    margin: 0 0 10px; /* Add spacing between text and highlight */
+    line-height: 1.5; /* Improve readability */
+}
+
+.footer-highlight {
+    font-size: 1rem; /* Slightly larger font for emphasis */
+    color: #28a745; /* Professional blue for highlight */
+    font-weight: 600; /* Semi-bold for emphasis */
+}
+
+
+/* Help Section*/
+
+#help-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #343a40;
+    line-height: 1.6;
+}
+
+#help-section h2 {
+    font-size: 1.4rem;
+    color: #03172d;
+    margin-bottom: 10px;
+}
+
+/* #help-section ul {
+    list-style-type: disc;
+    margin-left: 2px;
+} */
+
+#help-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#help-section a:hover {
+    text-decoration: underline;
+}
